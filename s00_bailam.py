@@ -42,5 +42,30 @@ get_24hformat_hour('11 PM')            | 23                     | 12
 
 #region bailam
 def get_24hformat_hour(hour_str):
-  return 'todo'
+  # if 'pm' in hour_str:
+  #   return int(hour_str.split('pm')[0]) + 12
+  # if 'PM' in hour_str:
+  #   return int(hour_str.split('PM')[0]) + 12
+  # if 'am' in hour_str:
+  #   return (hour_str.split('am')[0])
+  # if 'AM' in hour_str:
+  #   return (hour_str.split('AM')[0])
+  hours = []
+  if 'pm' in hour_str:
+    hours = int(hour_str.split('pm')[0]) + 12
+  elif 'PM' in hour_str:
+    hours = int(hour_str.split('PM')[0]) + 12
+  elif 'am' in hour_str:
+    hours = (hour_str.split('am')[0])
+  elif 'AM' in hour_str:
+    hours = (hour_str.split('AM')[0])
+  if ' pm' in hour_str:
+    hours = int(hour_str.split(' pm')[0]) + 12
+  if ' am' in hour_str:
+    hours = (hour_str.split(' am')[0])
+  elif ' PM' in hour_str:
+    hours = int(hour_str.split(' PM')[0]) + 12
+  elif ' AM' in hour_str:
+    hours = (hour_str.split(' AM')[0])
+  return str(hours)
 #endregion bailam
